@@ -1,0 +1,53 @@
+version: '3'
+
+networks:
+  begaming:
+    external: false
+
+services:
+  nginx:
+    container_name: begaming-nginx
+    image: nginx:1.13
+    volumes:
+      - ".:/var/www/html"
+      - "./docker/config/nginx.conf:/etc/nginx/nginx.conf"
+    ports:
+      - 9000:80
+    depends_on:
+      - php
+    networks:
+      - default
+  php:
+    build:
+      context: .
+      dockerfile : docker/images/laravel.dockerfile
+    container_name: begaming-php
+    ports:
+      - 9001:9000
+    volumes:
+      - ".:/var/www/html"
+    depends_on:
+      - redis
+    networks:
+      - default
+    links:
+      - mysql
+  mysql:
+    build:
+      context: .
+      dockerfile: docker/images/mysql.dockerfile
+    container_name: begaming-mysql
+    volumes:
+      - ".data/mysql:/var/lib/mysql"
+      - "./docker/config/mysql.cnf:/etc/mysql/conf.d/mysql-custom.cnf"
+    ports:
+      - 3306:3306
+    networks:
+      - default
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+  redis:
+    image: "redis:latest"
+    container_name: begaming-redis
+    networks:
+      - default
