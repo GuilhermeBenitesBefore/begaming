@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Bagde extends Model
+class Badge extends Model
 {
     protected $fillable = ['name'];
 }
