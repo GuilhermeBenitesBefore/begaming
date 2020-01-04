@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Badge;
+use App\Http\Middleware\Admin;
 use App\Http\Requests\BadgeRequest;
 
 class BadgeController extends Controller
@@ -10,6 +11,7 @@ class BadgeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware(Admin::class);
     }
 
     public function index(){

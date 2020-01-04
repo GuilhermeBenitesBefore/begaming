@@ -41,7 +41,7 @@
 
                         <li class="nav-item nav-profile dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-{{--                                <span class="nav-profile-name">{{ Auth::user()->name }}</span>--}}
+                                <span class="nav-profile-name">{{ Auth::user()->name }}</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                                  aria-labelledby="profileDropdown">
@@ -97,6 +97,32 @@
                                         <a class="nav-link"
                                            href="{{ route('badges.store') }}">Cadastrar Badge
                                         </a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('badges.index') }}">Badges
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    @endif
+
+                    @if(Auth::user()->isAdmin)
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="mdi mdi-account menu-icon"></i>
+                                <span class="menu-title">Colaboradores</span>
+                            </a>
+
+                            <div class="submenu">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('users.store') }}">Cadastrar Colaborador
+                                        </a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('users.index') }}">Colaboradores
+                                        </a></li>
                                 </ul>
                             </div>
                         </li>
@@ -125,7 +151,7 @@
 <!-- inject:js -->
 <script src="{{ asset('js/template.js') }}"></script>
 <!-- endinject -->
-<script src="{{ asset('js/select2.min.js') }}"></script>
+<script src="{{ asset('js/select2.js') }}"></script>
 <script src="{{ asset('js/raphael-2.1.4.min.js') }}"></script>
 <script src="{{ asset('js/justgage.js') }}"></script>
 <!-- Custom js for this page-->
