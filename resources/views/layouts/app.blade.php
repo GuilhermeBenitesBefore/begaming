@@ -1,80 +1,136 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BeGaming</title>
+    <!-- base:css -->
+    <link rel="stylesheet" href="{{ asset('css/materialdesignicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/vendor.bundle.base.css') }}">
+    <!-- endinject -->
+    <link rel="stylesheet" href="{{ asset('css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/select2-bootstrap.min.css') }}">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}"/>
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+<div class="container-scroller">
+    <!-- partial:partials/_horizontal-navbar.html -->
+    <div class="horizontal-menu">
+        <nav class="navbar top-navbar col-lg-12 col-12 p-0">
+            <div class="container-fluid">
+                <div class="navbar-menu-wrapper d-flex align-items-center justify-content-between">
+                    <ul class="navbar-nav navbar-nav-left">
 
                     </ul>
+                    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                        <a class="navbar-brand brand-logo" href="{{ url('/') }}"><img src="/images/logo.svg"
+                                                                                      alt="logo"/></a>
+                        <a class="navbar-brand brand-logo-mini" href="{{ url('/') }}"><img
+                                src="/images/logo-mini.svg" alt="logo"/></a>
+                    </div>
+                    <ul class="navbar-nav navbar-nav-right">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                        <li class="nav-item nav-profile dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+{{--                                <span class="nav-profile-name">{{ Auth::user()->name }}</span>--}}
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                                 aria-labelledby="profileDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+                                    <i class="mdi mdi-logout text-primary"></i>
+                                    Sair
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
                     </ul>
+                    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+                            data-toggle="horizontal-menu-toggle">
+                        <span class="mdi mdi-menu"></span>
+                    </button>
                 </div>
             </div>
         </nav>
+        <nav class="bottom-navbar">
+            <div class="container">
+                <ul class="nav page-navigation">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/') }}">
+                            <i class="mdi mdi-file-document-box menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('points.index') }}">
+                            <i class="mdi mdi-clipboard-check menu-icon"></i>
+                            <span class="menu-title">Pontuações</span>
+                        </a>
+                    </li>
+                    @if(Auth::user()->isAdmin)
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="mdi mdi-trophy menu-icon"></i>
+                                <span class="menu-title">Badges</span>
+                            </a>
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+                            <div class="submenu">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('points.store') }}">Pontuar
+                                        </a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('badges.store') }}">Cadastrar Badge
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    @endif
+                </ul>
+            </div>
+        </nav>
     </div>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                @yield('content')
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+
+<script src="{{ asset('js/vendor.bundle.base.js') }}"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="{{ asset('js/template.js') }}"></script>
+<!-- endinject -->
+<script src="{{ asset('js/select2.min.js') }}"></script>
+<script src="{{ asset('js/raphael-2.1.4.min.js') }}"></script>
+<script src="{{ asset('js/justgage.js') }}"></script>
+<!-- Custom js for this page-->
+<script src="{{ asset('js/dashboard.js') }}"></script>
+<script src="{{ asset('js/select2.js') }}"></script>
+</div>
 </body>
 </html>
