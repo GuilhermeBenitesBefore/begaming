@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function badges(){
+        return $this->belongsToMany('App\Badge', 'users_badges')
+            ->withPivot('points')
+            ->withTimestamps();
+    }
+
+    public function points(){
+        return $this->hasMany('App\Point');
+    }
 }
