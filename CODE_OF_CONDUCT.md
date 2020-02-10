@@ -34,13 +34,13 @@ Este Código de Conduta se aplica aos espaços do projeto e aos espaços públic
 
 ## Execução
 
-Instâncias de comportamento abusivo, assediador ou inaceitável podem ser relatadas entrando em contato com a equipe do projeto em [guilherme.benites@before.com.br] (mailto: guilherme.benites@before.com.br). Todas as reclamações serão analisadas e investigadas e resultarão em uma resposta considerada necessária e apropriada às circunstâncias. A equipe do projeto é obrigada a manter a confidencialidade em relação ao relator de um incidente. Detalhes adicionais de políticas específicas de imposição podem ser publicados separadamente.
+Instâncias de comportamento abusivo, assediador ou inaceitável podem ser relatadas entrando em contato com a equipe do projeto em <guilherme.benites@before.com.br>. Todas as reclamações serão analisadas e investigadas e resultarão em uma resposta considerada necessária e apropriada às circunstâncias. A equipe do projeto é obrigada a manter a confidencialidade em relação ao relator de um incidente. Detalhes adicionais de políticas específicas de imposição podem ser publicados separadamente.
 
 Os mantenedores do projeto que não seguem ou aplicam o Código de Conduta de boa fé podem enfrentar repercussões temporárias ou permanentes, conforme determinado por outros membros da liderança do projeto.
 
 ## Atribuição
 
-Este Código de Conduta é adaptado da [Aliança de Contribuinte] [página inicial], versão 1.4, disponível em [https://contributor-covenant.org/version/1/4,95[version]
+Este Código de Conduta é adaptado da [Aliança de Contribuinte], versão 1.4, disponível em https://contributor-covenant.org/version/1/4,95
 
-[página inicial]: https://contributor-covenant.org
-[versão]: https://contributor-covenant.org/version/1/4/
+[Aliança de Contribuinte]: https://contributor-covenant.org
+[version]: https://contributor-covenant.org/version/1/4/
