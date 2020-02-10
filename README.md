@@ -13,4 +13,4 @@ Este projeto tem como objetivo facilitar a gestão e o acompanhamentos do sistem
  - Aumentar a cobertura de testes
  - Incrementar documentação
 
-Por favor leia nosso [CONTRIBUTING.md] para detalhes do nosso código de conduta.
+Por favor leia nosso [CODE_OF_CONDUCT.md] para detalhes do nosso código de conduta.
