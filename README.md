@@ -13,4 +13,6 @@ Este projeto tem como objetivo facilitar a gestão e o acompanhamentos do sistem
  - Aumentar a cobertura de testes
  - Incrementar documentação
 
-Por favor leia nosso [CODE_OF_CONDUCT.md] para detalhes do nosso código de conduta.
+Por favor leia nosso [Código de Conduta] para detalhes do nosso código de conduta.
+
+[Código de Conduta]: https://github.com/GuilhermeBenitesBefore/begaming/blob/master/CODE_OF_CONDUCT.md
