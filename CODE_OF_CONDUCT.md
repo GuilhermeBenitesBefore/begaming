@@ -4,6 +4,8 @@ Código de Conduta da Aliança do Colaborador
 
 No interesse de promover um ambiente aberto e acolhedor, nós, como colaboradores e mantenedores, comprometemo-nos a tornar a participação em nosso projeto e em nossa comunidade uma experiência livre de assédio para todos, independentemente de idade, tamanho corporal, deficiência, etnia, identidade e expressão de gênero, nível de experiência, nacionalidade, aparência pessoal, raça, religião ou identidade e orientação sexual.
 
+Comprometo-me em realizar qualquer contribuição para a ferramenta somente fora do meu horário de expediente de trabalho, estando ciente de que tal execução será feita por minha livre e espontânea vontade e não está atrelada ao meu resultado da função que exerço como funcionário da Before.
+
 ## Nossos padrões
 
 Exemplos de comportamento que contribuem para criar um ambiente positivo incluem:
