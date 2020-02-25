@@ -13,7 +13,7 @@ Este projeto tem como objetivo facilitar a gestão e o acompanhamentos do sistem
  - Aumentar a cobertura de testes
  - Incrementar documentação
 
-## Como rodar o projeto local ?
+## Como rodar o projeto local ? [Ubuntu]
  
 A princípio, é preciso ter os seguintes softwares instalados:
  
