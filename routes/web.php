@@ -11,6 +11,9 @@
 |
 */
 
+use App\Mail\ResetaPassword;
+use Illuminate\Support\Facades\Mail;
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -39,3 +42,12 @@ Route::prefix('users')->group(function () {
     Route::post('/create', 'UserController@store')->name('users.store');
 });
 
+Route::get('envio-email-recuperacao-senha', function(){
+
+    //@todo Pegar esses dados do BD, este é apenas um exemplo
+    $user = new App\User();
+    $user->name = 'Gabriel';
+    $user->email = 'gabrielbittardomingues@gmail.com';
+
+    Mail::send(new ResetaPassword($user));
+});
