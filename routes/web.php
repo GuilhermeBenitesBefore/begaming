@@ -47,7 +47,7 @@ Route::get('envio-email-recuperacao-senha', function(){
     //@todo Pegar esses dados do BD, este é apenas um exemplo
     $user = new App\User();
     $user->name = 'Gabriel';
-    $user->email = 'gabrielbittardomingues@gmail.com';
+    $user->email = 'gabriel.domingues@before.com.br';
 
     Mail::send(new ResetaPassword($user));
 });
