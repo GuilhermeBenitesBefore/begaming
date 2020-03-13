@@ -44,7 +44,7 @@ class ResetPassword extends Notification
     {
         return (new MailMessage)
                     ->subject('Alteração de Senha BeGaming')
-                    ->line('Você solicitou a alteração de sua senha Begaming. Não se preocupe, basta acessar o link abaixo e preencher com a nova senha.')
+                    ->line('Você solicitou a alteração de sua senha BeGaming. Não se preocupe, basta acessar o link abaixo e preencher com a nova senha.')
                     ->action('Resetar Senha!', url(config('app.url').route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
                     ->line('Este link irá expirar em 60 minutos.');
     }
