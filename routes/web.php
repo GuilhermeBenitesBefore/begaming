@@ -38,3 +38,4 @@ Route::prefix('users')->group(function () {
     Route::get('/create', 'UserController@create');
     Route::post('/create', 'UserController@store')->name('users.store');
 });
+
