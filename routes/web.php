@@ -38,9 +38,3 @@ Route::prefix('users')->group(function () {
     Route::get('/create', 'UserController@create');
     Route::post('/create', 'UserController@store')->name('users.store');
 });
-
-Route::prefix('senha')->group(function() {
-
-    Route::get('/reseta', 'SenhaController@getFormEsqueciSenha')->name('senha.formRecuperacaoDeSenha');
-    Route::post('/reseta', 'SenhaController@resetaSenha')->name('senha.resetaSenha');
-});

@@ -41,8 +41,8 @@
                             </label>
                         </div>
 
-                        @if (Route::has('senha.formRecuperacaoDeSenha'))
-                            <a class="auth-link text-black" href="{{ route('senha.formRecuperacaoDeSenha') }}">
+                        @if (Route::has('password.request'))
+                            <a class="auth-link text-black" href="{{ route('password.request') }}">
                                 {{ __('Esqueceu a senha?') }}
                             </a>
                         @endif
