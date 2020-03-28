@@ -101,6 +101,10 @@
                                         <a class="nav-link"
                                            href="{{ route('badges.index') }}">Badges
                                         </a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('badges.ranking') }}">Ranking
+                                        </a></li>
                                 </ul>
                             </div>
                         </li>

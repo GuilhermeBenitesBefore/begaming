@@ -29,6 +29,8 @@ Route::prefix('badges')->group(function () {
 
     Route::get('/create', 'BadgeController@create');
     Route::post('/create', 'BadgeController@store')->name('badges.store');
+
+    Route::get('/ranking', 'BadgeController@ranking')->name('badges.ranking');
 });
 
 Route::prefix('users')->group(function () {
