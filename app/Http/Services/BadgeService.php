@@ -20,6 +20,7 @@ class BadgeService
             ->select('users.name AS nomeDoUsuario', 'users_badges.points AS pontos', 'badges.name AS nomeDaBadge')
             ->orderBy('badges.name', 'asc')
             ->orderBy('users_badges.points', 'desc')
+            ->orderBy('users.name', 'asc')
             ->get();
 
         return $ranking;
