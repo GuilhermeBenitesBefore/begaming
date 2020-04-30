@@ -14,7 +14,7 @@ class BadgeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware(Admin::class);
+        $this->middleware(Admin::class, ['except' => ['ranking']]);
 
         $this->service = new BadgeService();
     }
