@@ -21,7 +21,17 @@
                                 <td>{{$ranking->nomeDoUsuario}}</td>
                                 <td>{{$ranking->nomeDaBadge}}</td>
                                 <td>{{$ranking->pontos}}</td>
-                                <td>@TODO status atual...</td>
+                                @if($ranking->pontos >= $ranking->pontuacao_nivel_black)
+                                    <td style="color: black; font-weight: bold">Black</td>
+                                @elseif($ranking->pontos >= $ranking->pontuacao_nivel_gold)
+                                    <td style="color: goldenrod; font-weight: bold">Gold</td>
+                                @elseif($ranking->pontos >= $ranking->pontuacao_nivel_silver)
+                                    <td style="color: grey; font-weight: bold">Silver</td>
+                                @elseif($ranking->pontos >= $ranking->pontuacao_nivel_classic)
+                                    <td style="color: saddlebrown; font-weight: bold">Classic</td>
+                                @else
+                                    <td>Não Elegível</td>
+                                @endif
                             </tr>
                         @endforeach
                         </tbody>

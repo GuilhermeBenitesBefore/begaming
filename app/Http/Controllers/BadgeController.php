@@ -37,7 +37,7 @@ class BadgeController extends Controller
 
     public function ranking()
     {
-        $ranking = $this->service->obterRanking();
+        $ranking = $this->service->obterRankingComNiveisDeBadges();
         return view('badge.ranking', ['registrosDoRanking' => $ranking]);
     }
 }

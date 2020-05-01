@@ -11,17 +11,21 @@ class BadgeService
         //
     }
 
-    //@TODO: Quando criar a migration com os niveis dos badges conforme issue #3, adicionar a coluna aqui e na view.
-    public function obterRanking()
+    public function obterRankingComNiveisDeBadges()
     {
-        $ranking = DB::table('users_badges')
-            ->join('badges', 'badges.id', '=', 'users_badges.badge_id')
-            ->join('users', 'users.id', '=', 'users_badges.user_id')
-            ->select('users.name AS nomeDoUsuario', 'users_badges.points AS pontos', 'badges.name AS nomeDaBadge')
-            ->orderBy('badges.name', 'asc')
-            ->orderBy('users_badges.points', 'desc')
-            ->orderBy('users.name', 'asc')
-            ->get();
+        $sql = "select nomeDoUsuario, pontos, nomeDaBadge, pontuacao_nivel_classic,
+                pontuacao_nivel_silver, pontuacao_nivel_gold, pontuacao_nivel_black
+                from
+                (select users.name as nomeDoUsuario, users_badges.points as pontos, badges.name as nomeDaBadge,
+                badges.id as badgePontuadaID from users_badges
+                inner join badges on badges.id = users_badges.badge_id
+                inner join users on users.id = users_badges.user_id) as ranking,
+                (select pontuacao_nivel_classic, pontuacao_nivel_silver, pontuacao_nivel_gold, pontuacao_nivel_black, id as badgeID
+                from badges) as pontuacoesTable
+                where badgePontuadaID = badgeID
+                order by nomeDaBadge ASC, pontos DESC, nomeDoUsuario ASC;";
+
+        $ranking = DB::SELECT($sql);
 
         return $ranking;
     }
