@@ -81,6 +81,6 @@ class BadgeController extends Controller
             'Content-Type' => 'text/csv',
         ];
 
-        return Response::download($nomeDoArquivo, 'ranking.csv', $headers);
+        return Response::download($nomeDoArquivo, 'ranking-begaming.csv', $headers);
     }
 }
