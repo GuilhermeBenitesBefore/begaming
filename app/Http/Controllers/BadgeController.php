@@ -49,7 +49,7 @@ class BadgeController extends Controller
     public function rankingCSV()
     {
         $tabela   = $this->service->obterRankingComNiveisDeBadges();
-        $nomeDoArquivo = "ranking.csv";
+        $nomeDoArquivo = "ranking-begaming.csv";
         $handle   = fopen($nomeDoArquivo, 'w+');
         $cabecalho = "Funcionário;Badge;Pontuação Atual;Status Atual";
         fputcsv($handle, [$cabecalho]);
