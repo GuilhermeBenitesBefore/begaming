@@ -31,6 +31,7 @@ Route::prefix('badges')->group(function () {
     Route::post('/create', 'BadgeController@store')->name('badges.store');
 
     Route::get('/ranking', 'BadgeController@ranking')->name('badges.ranking');
+    Route::get('/ranking-csv', 'BadgeController@rankingCSV')->name('badges.ranking.csv');
 });
 
 Route::prefix('users')->group(function () {

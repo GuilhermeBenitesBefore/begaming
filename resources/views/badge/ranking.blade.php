@@ -4,6 +4,7 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
+                <a href="{{ route('badges.ranking.csv') }}" style="margin-left: 85%;" class="btn btn-secondary">Exportar CSV</a>
                 <h4 class="card-title">Ranking</h4>
                 <div class="table-responsive">
                     <table class="table">
