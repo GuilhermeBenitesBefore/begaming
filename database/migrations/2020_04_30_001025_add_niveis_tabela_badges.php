@@ -18,6 +18,7 @@ class AddNiveisTabelaBadges extends Migration
     public function up()
     {
         Schema::table('badges', function (Blueprint $table) {
+            $table->string('indicador');
             $table->integer('pontuacao_nivel_classic');
             $table->integer('pontuacao_nivel_silver');
             $table->integer('pontuacao_nivel_gold');
@@ -31,6 +32,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 8,
                          'pontuacao_nivel_gold'    => 12,
                          'pontuacao_nivel_black'   => 16,
+                         'indicador'               => 'Ações'
                      ]);
 
         DB::table('badges')
@@ -40,6 +42,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 200,
                          'pontuacao_nivel_gold'    => 300,
                          'pontuacao_nivel_black'   => 400,
+                         'indicador'               => 'Pontos'
                      ]);
 
         DB::table('badges')
@@ -49,6 +52,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 250,
                          'pontuacao_nivel_gold'    => 350,
                          'pontuacao_nivel_black'   => 500,
+                         'indicador'               => 'Pontos'
                      ]);
 
         DB::table('badges')
@@ -58,6 +62,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 30,
                          'pontuacao_nivel_gold'    => 45,
                          'pontuacao_nivel_black'   => 60,
+                         'indicador'               => 'Pontos'
                      ]);
 
         DB::table('badges')
@@ -67,6 +72,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 100,
                          'pontuacao_nivel_gold'    => 110,
                          'pontuacao_nivel_black'   => 120,
+                         'indicador'               => 'Pontos'
                      ]);
 
         DB::table('badges')
@@ -76,6 +82,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 8,
                          'pontuacao_nivel_gold'    => 12,
                          'pontuacao_nivel_black'   => 16,
+                         'indicador'               => 'Anos'
                      ]);
 
         DB::table('badges')
@@ -85,6 +92,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 20,
                          'pontuacao_nivel_gold'    => 30,
                          'pontuacao_nivel_black'   => 40,
+                         'indicador'               => 'Pontos'
                      ]);
 
         DB::table('badges')
@@ -94,6 +102,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 8,
                          'pontuacao_nivel_gold'    => 12,
                          'pontuacao_nivel_black'   => 16,
+                         'indicador'               => 'Pontos'
                      ]);
 
         DB::table('badges')
@@ -103,6 +112,7 @@ class AddNiveisTabelaBadges extends Migration
                          'pontuacao_nivel_silver'  => 1,
                          'pontuacao_nivel_gold'    => 1,
                          'pontuacao_nivel_black'   => 1,
+                         'indicador'               => '-'
                      ]);
     }
 
@@ -114,7 +124,8 @@ class AddNiveisTabelaBadges extends Migration
     public function down()
     {
         Schema::table('badges', function (Blueprint $table) {
-            $table->dropColumn(['pontuacao_nivel_classic',
+            $table->dropColumn(['indicador',
+                                'pontuacao_nivel_classic',
                                 'pontuacao_nivel_silver',
                                 'pontuacao_nivel_gold',
                                 'pontuacao_nivel_black']);
