@@ -4,15 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Badge;
 use App\Http\Requests\PointRequest;
+use App\Http\Services\PointService;
 use App\Point;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class PointController extends Controller
 {
+
+    private $service;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->service = new PointService();
     }
 
     public function index(){
@@ -20,6 +25,12 @@ class PointController extends Controller
         $points = Auth::user()->points()->get();
 
         return view('point.index', ['points' => $points]);
+    }
+
+    public function obterPontuacaoGeral()
+    {
+        $pontos = $this->service->obterPontuacoesDeTodosOsUsuarios();
+        return view('point.geral', ['pontos' => $pontos]);
     }
 
     public function create(){
