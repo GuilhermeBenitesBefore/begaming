@@ -13104,6 +13104,15 @@ input[type="button"].btn-block {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid #e7eaed;
+
+   position: absolute;
+   height: 101px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+
+   background: #F7FAFC;
+   border-radius: 8px;
 }
 
 .card-footer:last-child {
@@ -22867,7 +22876,16 @@ dl li {
 }
 
 .card-descricao{
-    margin-left: 20%;
+    padding-left: 112px;
+    padding-bottom: 30%;
+}
+
+.figura-do-badge{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 30%;
+    bottom: 0%;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
