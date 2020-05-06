@@ -15,7 +15,7 @@ class AddDescricaoTabelaBadges extends Migration
     public function up()
     {
         Schema::table('badges', function (Blueprint $table) {
-            $table->string('descricao')->nullable()->after('deleted_at');
+            $table->longText('descricao')->nullable()->after('deleted_at');
         });
 
         DB::table('badges')
