@@ -22798,4 +22798,8 @@ dl li {
   }
 }
 
+.tabela-ranking:hover{
+    background-color: #E3E8E8E8 !important;
+}
+
 /*# sourceMappingURL=maps/style.css.map */
