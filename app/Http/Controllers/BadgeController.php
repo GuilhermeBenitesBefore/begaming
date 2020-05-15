@@ -7,6 +7,8 @@ use App\Http\Services\BadgeService;
 use App\Http\Middleware\Admin;
 use App\Http\Requests\BadgeRequest;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\View\View;
 
 class BadgeController extends Controller
 {
@@ -39,11 +41,12 @@ class BadgeController extends Controller
         return redirect('badges');
     }
 
-    public function ranking()
+    public function ranking(): View
     {
         $ranking = $this->service->obterRankingComNiveisDeBadges();
+        $nomeUsuarioLogado = Auth::user()->name;
 
-        return view('badge.ranking', ['registrosDoRanking' => $ranking]);
+        return view('badge.ranking', ['registrosDoRanking' => $ranking, 'nomeUsuarioLogado' => $nomeUsuarioLogado]);
     }
 
     public function rankingCSV()
