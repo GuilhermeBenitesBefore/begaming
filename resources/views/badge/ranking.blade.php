@@ -19,29 +19,30 @@
                         </thead>
                         <tbody>
                         @foreach($registrosDoRanking as $ranking)
-                            <tr class="tabela-ranking">
                                 @if($ranking->nomeDoUsuario == $nomeUsuarioLogado)
-                                    <td style="background-color: #b0d4f1;">{{$ranking->nomeDoUsuario}}</td>
-                                    <td style="background-color: #b0d4f1">{{$ranking->nomeDaBadge}}</td>
-                                    <td style="background-color: #b0d4f1">{{$ranking->pontos}}</td>
+                                    <tr class="tabela-ranking-usuario-logado">
+                                    <td>{{$ranking->nomeDoUsuario}}</td>
+                                    <td>{{$ranking->nomeDaBadge}}</td>
+                                    <td>{{$ranking->pontos}}</td>
                                     @if($ranking->pontos >= $ranking->pontuacao_nivel_black)
-                                        <td style="color: black; font-weight: bold; background-color: #b0d4f1">Black
+                                        <td style="color: black; font-weight: bold;">Black
                                         </td>
                                     @elseif($ranking->pontos >= $ranking->pontuacao_nivel_gold)
-                                        <td style="color: goldenrod; font-weight: bold; background-color: #b0d4f1">
+                                        <td style="color: goldenrod; font-weight: bold;">
                                             Gold
                                         </td>
                                     @elseif($ranking->pontos >= $ranking->pontuacao_nivel_silver)
-                                        <td style="color: grey; font-weight: bold; background-color: #b0d4f1">Silver
+                                        <td style="color: grey; font-weight: bold;">Silver
                                         </td>
                                     @elseif($ranking->pontos >= $ranking->pontuacao_nivel_classic)
-                                        <td style="color: saddlebrown; font-weight: bold; background-color: #b0d4f1">
+                                        <td style="color: saddlebrown; font-weight: bold;">
                                             Classic
                                         </td>
                                     @else
-                                        <td style="background-color: #b0d4f1">Não Elegível</td>
+                                        <td>Não Elegível</td>
                                     @endif
                                 @else
+                                    <tr class="tabela-ranking">
                                     <td>{{$ranking->nomeDoUsuario}}</td>
                                     <td>{{$ranking->nomeDaBadge}}</td>
                                     <td> {{$ranking->pontos}}</td>
