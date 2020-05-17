@@ -10940,14 +10940,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #464dee;
-  border-color: #464dee;
+  background-color: #f88656;
+  border-color: #f88656;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #232beb;
-  border-color: #1720ea;
+  background-color: #F86E32;
+  border-color: #f88656;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -20429,7 +20429,7 @@ code {
   width: 18px;
   height: 18px;
   border-radius: 2px;
-  border: solid #464dee;
+  border: solid grey;
   border-width: 2px;
   -webkit-transition: all;
   -moz-transition: all;
@@ -20464,7 +20464,7 @@ code {
 }
 
 .form-check .form-check-label input[type="checkbox"]:checked + .input-helper:before {
-  background: #464dee;
+  background: #F86E32;
   border-width: 0;
 }
 
