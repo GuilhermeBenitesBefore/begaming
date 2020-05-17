@@ -8674,7 +8674,7 @@
   --gray-lighter: #e8eff4;
   --gray-lightest: #e6e9ed;
   --black: #000000;
-  --primary: #464dee;
+  --primary: #F86E32;
   --secondary: #d8d8d8;
   --success: #0ddbb9;
   --info: #0ad7f7;
@@ -22485,7 +22485,7 @@ dl li {
   }
   .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link i,
   .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link .menu-title {
-    color: #464dee;
+    color: #9f9f9f;
     transition: color 1s ease;
   }
   .horizontal-menu .bottom-navbar .page-navigation > .nav-item:hover > .nav-link .menu-arrow {
@@ -22571,17 +22571,17 @@ dl li {
   position: absolute;
   left: 0;
   bottom: 0;
-  border-bottom: 2px solid #0ddbb9;
+  border-bottom: 2px solid #F86E32;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-icon {
-  color: #0ddbb9;
+  color: #F86E32;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-title,
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link i,
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item.active > .nav-link .menu-arrow {
-  color: #464dee;
+  color: #7a7a7a;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu {
@@ -22622,7 +22622,7 @@ dl li {
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a:hover {
-  color: #464dee;
+  color: #F86E32;
   -webkit-transition: color 0.1s linear;
   -moz-transition: color 0.1s linear;
   -ms-transition: color 0.1s linear;
@@ -22631,19 +22631,19 @@ dl li {
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a:hover:before {
-  background: #464dee;
+  background: #F86E32;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li a.active {
-  color: #464dee;
+  color: #F86E32;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li.active a {
-  color: #464dee;
+  color: #F86E32;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item .submenu ul li.active a:before {
-  background: #464dee;
+  background: #F86E32;
 }
 
 .horizontal-menu .bottom-navbar .page-navigation > .nav-item:not(.mega-menu) {
