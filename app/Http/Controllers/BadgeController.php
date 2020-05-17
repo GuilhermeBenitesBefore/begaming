@@ -43,7 +43,7 @@ class BadgeController extends Controller
 
     public function ranking(): View
     {
-        $ranking = $this->service->obterRankingComNiveisDeBadges();
+        $ranking           = $this->service->obterRankingComNiveisDeBadges();
         $nomeUsuarioLogado = Auth::user()->name;
 
         return view('badge.ranking', ['registrosDoRanking' => $ranking, 'nomeUsuarioLogado' => $nomeUsuarioLogado]);
@@ -51,39 +51,11 @@ class BadgeController extends Controller
 
     public function rankingCSV()
     {
-        $tabela   = $this->service->obterRankingComNiveisDeBadges();
-        $nomeDoArquivo = "ranking-begaming.csv";
-        $handle   = fopen($nomeDoArquivo, 'w+');
-        $cabecalho = "Funcionário;Badge;Pontuação Atual;Status Atual";
-        fputcsv($handle, [$cabecalho]);
-
-        foreach ($tabela as $linha) {
-
-            $linha = json_decode(json_encode($linha), true);
-            $linha['pontuacao_status'] = 'Não Elegível';
-
-            if ($linha['pontos'] >= $linha['pontuacao_nivel_classic']) {
-                $linha['pontuacao_status'] = 'Classic';
-            }
-            if ($linha['pontos'] >= $linha['pontuacao_nivel_silver']) {
-                $linha['pontuacao_status'] = 'Silver';
-            }
-            if ($linha['pontos'] >= $linha['pontuacao_nivel_gold']) {
-                $linha['pontuacao_status'] = 'Gold';
-            }
-            if ($linha['pontos'] >= $linha['pontuacao_nivel_black']) {
-                $linha['pontuacao_status'] = 'Black';
-            }
-
-            fputcsv($handle, array($linha['nomeDoUsuario'] . ";" . $linha['nomeDaBadge'] . ";" . $linha['pontos'] . ";" . $linha['pontuacao_status']));
-        }
-
-        fclose($handle);
-
+        $arquivo = $this->service->geraRankingCSV();
         $headers = [
             'Content-Type' => 'text/csv',
         ];
 
-        return Response::download($nomeDoArquivo, 'ranking-begaming.csv', $headers);
+        return Response::download($arquivo, 'ranking-begaming.csv', $headers);
     }
 }

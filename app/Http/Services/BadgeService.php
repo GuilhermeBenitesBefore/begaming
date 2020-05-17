@@ -29,4 +29,39 @@ class BadgeService
 
         return $ranking;
     }
+
+    public function geraRankingCSV(): string
+    {
+        $tabela        = $this->obterRankingComNiveisDeBadges();
+        $nomeDoArquivo = "ranking-begaming.csv";
+        $handle        = fopen($nomeDoArquivo, 'w+');
+        $cabecalho     = "Funcionário;Badge;Pontuação Atual;Status Atual";
+
+        fputcsv($handle, [$cabecalho]);
+
+        foreach ($tabela as $linha) {
+            $linha                     = json_decode(json_encode($linha), true);
+            $linha['pontuacao_status'] = 'Não Elegível';
+
+            if ($linha['pontos'] >= $linha['pontuacao_nivel_classic']) {
+                $linha['pontuacao_status'] = 'Classic';
+            }
+            if ($linha['pontos'] >= $linha['pontuacao_nivel_silver']) {
+                $linha['pontuacao_status'] = 'Silver';
+            }
+            if ($linha['pontos'] >= $linha['pontuacao_nivel_gold']) {
+                $linha['pontuacao_status'] = 'Gold';
+            }
+            if ($linha['pontos'] >= $linha['pontuacao_nivel_black']) {
+                $linha['pontuacao_status'] = 'Black';
+            }
+
+            fputcsv($handle,
+                    [$linha['nomeDoUsuario'] . ";" . $linha['nomeDaBadge'] . ";" . $linha['pontos'] . ";" . $linha['pontuacao_status']]);
+        }
+
+        fclose($handle);
+
+        return $nomeDoArquivo;
+    }
 }
