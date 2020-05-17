@@ -22012,14 +22012,14 @@ dl li {
 
 .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand img {
   max-width: 100%;
-  height: 24px;
+  height: 40px;
   margin: auto;
   vertical-align: middle;
 }
 
 @media (max-width: 991px) {
   .horizontal-menu .top-navbar .navbar-brand-wrapper .navbar-brand img {
-    height: 14px;
+    height: 44px;
   }
 }
 
