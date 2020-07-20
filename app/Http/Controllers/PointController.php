@@ -25,7 +25,7 @@ class PointController extends Controller
     public function create(){
 
         $badges = Badge::all();
-        $users = User::all()->sortBy('name', SORT_ASC);
+        $users = User::all()->sortBy('name');
 
         return view('point.create', ['badges' => $badges, 'users' => $users]);
     }
