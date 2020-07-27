@@ -80,15 +80,16 @@
                             <span class="menu-title">Pontuações</span>
                         </a>
                     </li>
-                    @if(Auth::user()->isAdmin)
-                        <li class="nav-item">
-                            <a class="nav-link">
-                                <i class="mdi mdi-trophy menu-icon"></i>
-                                <span class="menu-title">Badges</span>
-                            </a>
 
-                            <div class="submenu">
-                                <ul>
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <i class="mdi mdi-trophy menu-icon"></i>
+                            <span class="menu-title">Badges</span>
+                        </a>
+
+                        <div class="submenu">
+                            <ul>
+                                @if(Auth::user()->isAdmin)
                                     <li class="nav-item">
                                         <a class="nav-link"
                                            href="{{ route('points.store') }}">Pontuar
@@ -101,10 +102,14 @@
                                         <a class="nav-link"
                                            href="{{ route('badges.index') }}">Badges
                                         </a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    @endif
+                                @endif
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('badges.ranking') }}">Ranking
+                                        </a></li>
+                            </ul>
+                        </div>
+                    </li>
 
                     @if(Auth::user()->isAdmin)
                         <li class="nav-item">

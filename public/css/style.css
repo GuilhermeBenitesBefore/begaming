@@ -22798,4 +22798,12 @@ dl li {
   }
 }
 
+.tabela-ranking:hover{
+    background-color: rgb(241, 241, 241) !important;
+}
+
+.tabela-ranking-usuario-logado{
+    background-color: #d3d3d3;
+}
+
 /*# sourceMappingURL=maps/style.css.map */
