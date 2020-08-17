@@ -13104,6 +13104,15 @@ input[type="button"].btn-block {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid #e7eaed;
+
+   position: absolute;
+   height: 101px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+
+   background: #F7FAFC;
+   border-radius: 8px;
 }
 
 .card-footer:last-child {
@@ -22796,6 +22805,87 @@ dl li {
     left: 0;
     right: 0;
   }
+}
+
+/* BeGaming */
+
+.badge-descricao{
+    position: static;
+    height: 65px;
+    left: 0px;
+    right: 0px;
+    top: 51px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #869BAB;
+
+    flex: none;
+    order: 2;
+    align-self: center;
+    margin: 0px 0px;
+}
+
+.badge-nome{
+    position: static;
+    height: 30px;
+    left: 0px;
+    right: 0px;
+    top: 21px;
+
+    color: #F86E32;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 150%;
+
+    flex: none;
+    order: 1;
+    align-self: center;
+    margin: 0px 0px;
+}
+
+
+.card-campo-nome{
+    position: static;
+    height: 21px;
+    left: 0px;
+    right: 139.88px;
+    top: 0px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+
+    color: #1A202C;
+
+    flex: none;
+    order: 0;
+    align-self: flex-start;
+    margin: 0px 0px;
+}
+
+.card-descricao{
+    padding-left: 112px;
+    padding-bottom: 30%;
+}
+
+.figura-do-badge{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 30%;
+    bottom: 0%;
 }
 
 /*# sourceMappingURL=maps/style.css.map */
