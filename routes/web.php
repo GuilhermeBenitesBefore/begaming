@@ -18,6 +18,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::prefix('points')->group(function () {
 
     Route::get('/', 'PointController@index')->name('points.index');
+    Route::get('/geral', 'PointController@obterPontuacaoGeral')->name('points.geral')->middleware('admin');
 
     Route::get('/create', 'PointController@create')->middleware('admin');
     Route::post('/create', 'PointController@store')->name('points.store');

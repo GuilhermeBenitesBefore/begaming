@@ -74,11 +74,31 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('points.index') }}">
-                            <i class="mdi mdi-clipboard-check menu-icon"></i>
-                            <span class="menu-title">Pontuações</span>
-                        </a>
+                    @if(Auth::user()->isAdmin)
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="mdi mdi-clipboard-check menu-icon"></i>
+                                <span class="menu-title">Pontuações</span>
+                            </a>
+                            <div class="submenu">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('points.index') }}">Sua Pontuação
+                                        </a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                           href="{{ route('points.geral') }}">Pontuação Geral
+                                        </a></li>
+                                </ul>
+                            </div>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('points.index') }}">
+                                <i class="mdi mdi-clipboard-check menu-icon"></i>
+                                <span class="menu-title">Pontuações</span>
+                            </a>
+                            @endif
                     </li>
                     @if(Auth::user()->isAdmin)
                         <li class="nav-item">
