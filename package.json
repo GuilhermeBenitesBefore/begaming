@@ -18,7 +18,7 @@
     "devDependencies": {
         "@commitlint/cli": "^8.3.4",
         "@commitlint/config-conventional": "^8.3.4",
-        "axios": "^0.19",
+        "axios": "^0.21",
         "bootstrap": "^4.0.0",
         "commitizen": "^4.0.3",
         "cross-env": "^5.1",
